@@ -4,6 +4,7 @@ import os
 
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
+from dotenv import load_dotenv
 
 from db import db
 from blocklist import BLOCKLIST
@@ -17,6 +18,8 @@ from resources.user import blp as UserBlueprint
 # factory patter for flask app
 def create_app(db_url=None):
     app = Flask(__name__)
+    # load .env file from project
+    load_dotenv()
 
     # Flask configuration
     app.config["PROPAGATE_EXCEPTIONS"] = True
