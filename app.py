@@ -105,8 +105,8 @@ def create_app(db_url=None):
         )
 
     # flask-migrate will create our database tables
-    with app.app_context():
-        db.create_all()
+    # with app.app_context():
+    #     db.create_all()
 
     api.register_blueprint(ItemBlueprint)
     api.register_blueprint(StoreBlueprint)
